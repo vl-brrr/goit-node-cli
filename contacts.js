@@ -63,6 +63,7 @@ async function addContact(name, email, phone) {
       await fs.writeFile(contactsPath, JSON.stringify(contacts));
       return newContact;
     }
+    return "There is already a contact with such a phone number.";
   } catch (err) {
     console.log(err);
   }
